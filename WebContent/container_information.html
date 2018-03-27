@@ -1,0 +1,2534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>中铁集装箱健康管理系统</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <!-- 调用一些小图表标志和左右转换的小箭头 -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="static/css/span-font.css">
+  <link rel="stylesheet" href="static/css/div-font.css">
+  <link rel="stylesheet" href="static/css/search.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>中铁集</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>集装箱PHM</b>系统</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">        
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="AdminLTE-2.4.0-rc/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">管理员1</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="AdminLTE-2.4.0-rc/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  	管理员1 
+                  <small>欢迎使用系统</small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button 右上角小齿轮-->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="AdminLTE-2.4.0-rc/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>管理员1</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="active treeview menu-open">
+          <a href="#">
+            <i class="fa fa-file-text"></i> <span>箱体信息查询</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="#"><i class="fa fa-search"></i> 箱体信息查询</a></li>
+            <li><a href="#"><i class="fa fa-train"></i> 箱体轨迹显示</a></li>
+          </ul>
+        </li>
+        
+        <li class="treeview menu">
+          <a href="#">
+            <i class="fa fa-list"></i> <span>箱体健康管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.html"><i class="fa fa-map"></i> 箱体健康指数</a></li>
+            <li><a href="health_query_new.html"><i class="fa fa-line-chart"></i> 箱体健康状态趋势</a></li>
+            <li><a href="Health_predict_new.html"><i class="fa fa-line-chart"></i> 箱体健康预测</a></li>
+          </ul>
+        </li>
+        
+        <li class="treeview menu">
+          <a href="#">
+            <i class="fa fa-wrench"></i> <span>箱体维修决策</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-bar-chart"></i> 健康分级</a></li>
+            <li><a href="#"><i class="fa fa-gavel"></i> 检修部位</a></li>
+            <li><a href="#"><i class="fa fa-calendar"></i> 时间建议</a></li>
+          </ul>
+        </li>   
+      
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper" style="background-color:#404a59">
+    <!-- Main content -->
+    <section class="content">
+   		<ul id="myTab" class="nav nav-tabs">
+	<li class="active"><a href="#home" data-toggle="tab">集装箱设计制造单位管理</a></li>
+	<li><a href="#ios" data-toggle="tab">集装箱修理厂家管理</a></li>
+	<li><a href="#apple" data-toggle="tab">集装箱资产台账信息管理</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active" id="home">
+		<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">集装箱设计制造单位信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>单位代码</th>
+                  <th>单位名称</th>
+                  <th>所属单位代码</th>
+                  <th>单位地址</th>
+                  <th>联系电话</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+<td>103</td>
+<td>甘肃宝骏工贸有限责任公司</td>
+<td>J</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>104</td>
+<td>银川火车站集鑫运贸服务中心</td>
+<td>J</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>105</td>
+<td>中集重庆物流装备制造有限公司</td>
+<td>W</td>
+<td>nan</td>
+<td>075526802303</td>
+</tr>
+<tr>
+<td>106</td>
+<td>天津太平货柜有限公司</td>
+<td>P</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>107</td>
+<td>深圳南方中集集装箱服务有限公司</td>
+<td>Q</td>
+<td>深圳南山区蛇口港湾大道2号中集研发中心306</td>
+<td>075526691131</td>
+</tr>
+<tr>
+<td>108</td>
+<td>天津中集集装箱有限公司</td>
+<td>P</td>
+<td>天津港跃进路61号</td>
+<td>22601195</td>
+</tr>
+<tr>
+<td>109</td>
+<td>东方国际集装箱（锦州）有限公司</td>
+<td>T</td>
+<td>锦州市经济技术开发区</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>111</td>
+<td>青岛交运新华昌集装箱有限公司</td>
+<td>K</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>112</td>
+<td>厦门太平货柜有限公司</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>115</td>
+<td>宁波太平货柜有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>02163930099-883</td>
+</tr>
+<tr>
+<td>117</td>
+<td>惠州太平货柜有限公司</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>119</td>
+<td>上海太平国际货柜有限公司</td>
+<td>H</td>
+<td>上海市嘉定区泸宜公路3637号</td>
+<td>021-63070169</td>
+</tr>
+<tr>
+<td>120</td>
+<td>青岛恒丰物流有限公司</td>
+<td>K</td>
+<td>青岛经济技术开发区</td>
+<td>053286828666</td>
+</tr>
+<tr>
+<td>121</td>
+<td>青岛太平货柜有限公司</td>
+<td>K</td>
+<td>青岛经济技术开发区</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>122</td>
+<td>东方国际集装箱（连云港）有限公司</td>
+<td>nan</td>
+<td>连云港经济技术开发区</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>123</td>
+<td>上海路浦朝华金属结构有限公司</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>124</td>
+<td>武威市庆捷通物流有限公司</td>
+<td>J</td>
+<td>nan</td>
+<td>09356978444</td>
+</tr>
+<tr>
+<td>140</td>
+<td>梅河口铁成工贸有限责任公司</td>
+<td>T</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>144</td>
+<td>青岛交运新华昌集装箱有限公司</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>145</td>
+<td>青岛中集特种冷藏设备有限公司</td>
+<td>K</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>146</td>
+<td>上海胜狮冷冻货柜有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>149</td>
+<td>张家港市海星集装箱制造有限公司</td>
+<td>nan</td>
+<td>张家港经济开发区悦丰路6号</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>151</td>
+<td>哈尔滨建成北方专用车有公司</td>
+<td>nan</td>
+<td>哈尔滨市香坊区南直路65号</td>
+<td>0451-88624651</td>
+</tr>
+<tr>
+<td>147</td>
+<td>齐齐哈尔轨道交通装备有限责任公司大连集装箱分公司</td>
+<td>T</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>1</td>
+<td>上海现代集装箱制造有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>2</td>
+<td>江苏华鑫特种货柜有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>3</td>
+<td>南通中集特种运输设备公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>扬州润扬物流装备有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>5</td>
+<td>南通顺达集装箱公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>6</td>
+<td>宜兴货柜</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>7</td>
+<td>常州新华昌集装箱公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>8</td>
+<td>柳州车辆厂</td>
+<td>Z</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>10</td>
+<td>上海中集内燃发电设备公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>12</td>
+<td>沧州箱厂</td>
+<td>P</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>13</td>
+<td>唐山机车车辆厂迅捷公司</td>
+<td>P</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>14</td>
+<td>广铁（集团）公司</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>15</td>
+<td>济南装机厂</td>
+<td>K</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>16</td>
+<td>武工厂</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>17</td>
+<td>苏州铁路集装箱厂</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>19</td>
+<td>东方海外</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>20</td>
+<td>海南冷藏公司</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>21</td>
+<td>上海中集宝伟工业有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>22</td>
+<td>九广公司</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>23</td>
+<td>新会中集</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>24</td>
+<td>上海宝山太平货柜有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>25</td>
+<td>青岛黄海箱厂</td>
+<td>K</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>26</td>
+<td>上海华海</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>27</td>
+<td>蛇口集装箱厂</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>28</td>
+<td>现代华海箱厂</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>29</td>
+<td>北海通运</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>30</td>
+<td>武汉候王箱厂</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>31</td>
+<td>广船集装箱厂</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>33</td>
+<td>广东顺安达太平货柜有限公司</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>34</td>
+<td>新会大力箱厂</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>35</td>
+<td>汉阳箱厂</td>
+<td>F</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>36</td>
+<td>上海集装箱厂</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>37</td>
+<td>天津修理厂</td>
+<td>P</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>38</td>
+<td>上海西修理厂</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>39</td>
+<td>双流装机厂</td>
+<td>W</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>40</td>
+<td>郑州装机厂</td>
+<td>F</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>41</td>
+<td>潍坊厂</td>
+<td>K</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>42</td>
+<td>广东大旺厂</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>43</td>
+<td>山桥厂</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>44</td>
+<td>大连集装箱厂</td>
+<td>T</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>45</td>
+<td>上海中集远东</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>46</td>
+<td>西安装机厂</td>
+<td>Y</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>47</td>
+<td>哈衡</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>48</td>
+<td>梅河口修理厂</td>
+<td>T</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>49</td>
+<td>柳州装机厂</td>
+<td>Z</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>50</td>
+<td>北郊</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>51</td>
+<td>蚌埠五金</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>52</td>
+<td>西安材料</td>
+<td>F</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>53</td>
+<td>双桥车辆段</td>
+<td>P</td>
+<td>北京</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>54</td>
+<td>包头东</td>
+<td>C</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>55</td>
+<td>漳州</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>56</td>
+<td>昆明东</td>
+<td>M</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>57</td>
+<td>大朗</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>58</td>
+<td>齐齐哈尔计量分中心</td>
+<td>B</td>
+<td>nan</td>
+<td>010-1111111</td>
+</tr>
+<tr>
+<td>59</td>
+<td>加格达齐</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>60</td>
+<td>伊图里河</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>61</td>
+<td>齐齐哈尔装机厂</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>62</td>
+<td>根河</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>63</td>
+<td>牡丹江</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>64</td>
+<td>佳木斯</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>65</td>
+<td>乌西车辆段</td>
+<td>R</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>66</td>
+<td>库尔勒车辆段</td>
+<td>R</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>67</td>
+<td>哈尔滨车辆段</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>69</td>
+<td>巴陵公司</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>70</td>
+<td>成都广汉</td>
+<td>W</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>71</td>
+<td>兰州石嘴山车辆段</td>
+<td>J</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>72</td>
+<td>锦州车辆段</td>
+<td>T</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>73</td>
+<td>集宁车辆段</td>
+<td>C</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>74</td>
+<td>绥芬和</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>75</td>
+<td>满洲里</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>76</td>
+<td>重庆西车辆段</td>
+<td>W</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>77</td>
+<td>鹰潭车辆段</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>78</td>
+<td>克拉玛依</td>
+<td>R</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>79</td>
+<td>天津华盛铁路集装箱有限公司</td>
+<td>V</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>80</td>
+<td>太原车务段装卸分公司(太原东站)</td>
+<td>V</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>81</td>
+<td>常州万隆</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>82</td>
+<td>天津华派</td>
+<td> </td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>83</td>
+<td>三间房车辆段</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>84</td>
+<td>胜狮货柜工业有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>85</td>
+<td>江苏万隆特种货柜有限公司</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>86</td>
+<td>牡丹江站货运装卸作业所</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>87</td>
+<td>佳木斯铁路经济技术开发公司</td>
+<td>B</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>88</td>
+<td>沈阳铁路局沈阳装卸机械配件厂</td>
+<td>T</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>89</td>
+<td>太原德盛隆物流有限公司</td>
+<td>V</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>90</td>
+<td>呼和浩特市吉安铁信集装箱有限责任公司</td>
+<td>C</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>91</td>
+<td>南京铁路西站运输服务所</td>
+<td>H</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>92</td>
+<td>九江兴源货运代理有限公司</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>93</td>
+<td>南昌铁路局福州东站劳动服务总公司</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>94</td>
+<td>南昌南车站劳动服务公司</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>95</td>
+<td>鹰潭市南站装卸储运公司</td>
+<td>G</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>96</td>
+<td>株洲北站购销公司</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>97</td>
+<td>湖南长铁装卸有限公司长沙分公司</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>98</td>
+<td>广州新广双装卸有限公司</td>
+<td>Q</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>99</td>
+<td>茂名市汇运物流有限公司</td>
+<td>Z</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>100</td>
+<td>成都铁路局贵阳南站劳动服务公司</td>
+<td>W</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>101</td>
+<td>成都东维实业有限公司</td>
+<td>W</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>102</td>
+<td>中国集装箱重庆公司汽车修理厂</td>
+<td>W</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>单位代码</th>
+                  <th>单位名称</th>
+                  <th>所属单位代码</th>
+                  <th>单位地址</th>
+                  <th>联系电话</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+	</div>
+	<div class="tab-pane fade" id="ios">
+		<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">集装箱设计制造单位信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>修理厂代码</th>
+                  <th>修理厂名称</th>
+                  <th>修理厂拼音码</th>
+                  <th>人工费单价</th>
+                  <th>备注</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+<td>X0023</td>
+<td>锦州</td>
+<td>JZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0026</td>
+<td>北京东</td>
+<td>BJD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0028</td>
+<td>太原东</td>
+<td>TYD</td>
+<td>10.0</td>
+<td>覆盖忻州</td>
+</tr>
+<tr>
+<td>X0030</td>
+<td>鸣李</td>
+<td>ML</td>
+<td>10.0</td>
+<td>覆盖北营等3个车站</td>
+</tr>
+<tr>
+<td>X0033</td>
+<td>呼和浩特</td>
+<td>HHHT</td>
+<td>10.0</td>
+<td>覆盖集宁等4个车站</td>
+</tr>
+<tr>
+<td>X0036</td>
+<td>安阳</td>
+<td>AY</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0038</td>
+<td>洛阳东</td>
+<td>LYD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0040</td>
+<td>焦作北</td>
+<td>JZB</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0043</td>
+<td>济南</td>
+<td>JN</td>
+<td>10.0</td>
+<td>覆盖黄台站</td>
+</tr>
+<tr>
+<td>X0045</td>
+<td>连云港</td>
+<td>LYG</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0047</td>
+<td>南京西</td>
+<td>NJX</td>
+<td>10.0</td>
+<td>覆盖南京西等3个车站</td>
+</tr>
+<tr>
+<td>X0050</td>
+<td>南昌南</td>
+<td>NCN</td>
+<td>10.0</td>
+<td>覆盖南昌南等4个车站</td>
+</tr>
+<tr>
+<td>X0053</td>
+<td>长沙北</td>
+<td>CSB</td>
+<td>10.0</td>
+<td>覆盖湖南省内各办理站</td>
+</tr>
+<tr>
+<td>X0056</td>
+<td>深圳北</td>
+<td>SZB</td>
+<td>10.0</td>
+<td>覆盖东莞等广深公司办理站</td>
+</tr>
+<tr>
+<td>X0059</td>
+<td>重庆东</td>
+<td>CQD</td>
+<td>10.0</td>
+<td>管辖重庆南、重庆北</td>
+</tr>
+<tr>
+<td>X0062</td>
+<td>大朗</td>
+<td>DL</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0064</td>
+<td>兰州北</td>
+<td>LXB</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0066</td>
+<td>库尔勒</td>
+<td>KRL</td>
+<td>10.0</td>
+<td>覆盖喀什</td>
+</tr>
+<tr>
+<td>X0069</td>
+<td>宝鸡</td>
+<td>BJ</td>
+<td>10.0</td>
+<td>覆盖宝鸡东等5个车站</td>
+</tr>
+<tr>
+<td>X0072</td>
+<td>太原东修理厂</td>
+<td>TYDXLC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0074</td>
+<td>西宁机修厂</td>
+<td>XNXLC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0077</td>
+<td>佳木斯市铁路经济技术开发公司</td>
+<td>JMS</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0079</td>
+<td>太原德盛隆物流有限公司</td>
+<td>TYDSL</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0082</td>
+<td>九江兴源货运代理有限公司</td>
+<td>JJ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0085</td>
+<td>鹰潭市南站装卸储运公司</td>
+<td>YTN</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0087</td>
+<td>湖南长铁装卸有限公司长沙分公司</td>
+<td>CSB</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0090</td>
+<td>成都铁路局贵阳南站劳动服务公司</td>
+<td>GYN</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0093</td>
+<td>甘肃宝骏工贸有限责任公司</td>
+<td>LZB</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0096</td>
+<td>蚌埠铁路五金建材总厂</td>
+<td>BBT</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0099</td>
+<td>武威市庆捷通物流有限公司</td>
+<td>WWSQJ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0100</td>
+<td>深圳南方中集集装箱服务有限公司(成都)</td>
+<td>SZNFZJ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0111</td>
+<td>天津盛光集装箱制造有限公司(太原)</td>
+<td>TJSG</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0102</td>
+<td>中国船级社</td>
+<td>ZGCJS</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0103</td>
+<td>深圳南方中集集装箱服务有限公司(广州)</td>
+<td>SZNFZJ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0104</td>
+<td>深圳南方中集集装箱服务有限公司(八景)</td>
+<td>nan</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0105</td>
+<td>乌鲁木齐宏铁特种集装箱检修有限责任公司</td>
+<td>WLMQHTTZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0106</td>
+<td>深圳南方中集集装箱服务有限公司(南昌)</td>
+<td>SZNFZJBJ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0107</td>
+<td>兰州铁路局兰州货运中心</td>
+<td>LZHYZX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0108</td>
+<td>天津盛光集装箱制造有限公司(北京)</td>
+<td>TJSG</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0109</td>
+<td>天津盛光集装箱制造有限公司(兰州)</td>
+<td>TJSG</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0110</td>
+<td>襄阳铁标集装箱有限公司</td>
+<td>XYTBJZX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0001</td>
+<td>哈尔滨哈铁装卸集装箱修配厂</td>
+<td>HEBHQS</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0002</td>
+<td>梅河口市铁成工贸有限责任公司</td>
+<td>MHKXXC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0003</td>
+<td>天津华盛铁路集装箱有限公司</td>
+<td>TJHS</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0004</td>
+<td>济南铁路装卸建筑机械开发公司</td>
+<td>JNZXJJC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0005</td>
+<td>郑州铁路装备制造有限公司</td>
+<td>ZZJZX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0006</td>
+<td>西安铁路局装卸机械厂</td>
+<td>XAZX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0007</td>
+<td>上海铁路集装箱修理有限公司</td>
+<td>SHXZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0008</td>
+<td>成都铁路起重运输机械厂</td>
+<td>CDJXC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0009</td>
+<td>南宁铁路装卸机械服务公司柳州修理服务站</td>
+<td>NNTLZX</td>
+<td>10.0</td>
+<td>柳州铁路装卸机械服务公司</td>
+</tr>
+<tr>
+<td>X0010</td>
+<td>新疆兵储物流有限责任公司</td>
+<td>XJBCWL</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0011</td>
+<td>甘肃金轮装卸搬运有限公司</td>
+<td>LZTLJD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0012</td>
+<td>昆明凯恩达化工工程技术有限公司</td>
+<td>KMDZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0013</td>
+<td>广州市嘉利仓码有限公司</td>
+<td>GZDLZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0014</td>
+<td>厦门铁路集装箱服务有限公司漳州集装箱修理厂</td>
+<td>FJZZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0015</td>
+<td>包头西北铁隆集装箱有限公司</td>
+<td>XBTLBTD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0016</td>
+<td>佳木斯</td>
+<td>JMS</td>
+<td>10.0</td>
+<td>覆盖鹤岗等13个车站</td>
+</tr>
+<tr>
+<td>X0017</td>
+<td>满洲里</td>
+<td>MZL</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0018</td>
+<td>绥芬河</td>
+<td>SFH</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0019</td>
+<td>三间房</td>
+<td>SJF</td>
+<td>10.0</td>
+<td>编组站</td>
+</tr>
+<tr>
+<td>X0020</td>
+<td>塔河</td>
+<td>TH</td>
+<td>10.0</td>
+<td>覆盖阿城等34个车站</td>
+</tr>
+<tr>
+<td>X0021</td>
+<td>伊图里河</td>
+<td>YTLH</td>
+<td>10.0</td>
+<td>覆盖阿龙山等17个车站</td>
+</tr>
+<tr>
+<td>X0022</td>
+<td>沈阳</td>
+<td>SY</td>
+<td>10.0</td>
+<td>覆盖沈阳东、沈阳南</td>
+</tr>
+<tr>
+<td>X0024</td>
+<td>吉林</td>
+<td>JL</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0025</td>
+<td>长春</td>
+<td>CC</td>
+<td>10.0</td>
+<td>覆盖长春东、长春南</td>
+</tr>
+<tr>
+<td>X0027</td>
+<td>石家庄南</td>
+<td>SJZN</td>
+<td>10.0</td>
+<td>覆盖正定等9个车站</td>
+</tr>
+<tr>
+<td>X0029</td>
+<td>侯马</td>
+<td>HM</td>
+<td>10.0</td>
+<td>覆盖永济等4个车站</td>
+</tr>
+<tr>
+<td>X0031</td>
+<td>介休</td>
+<td>JX</td>
+<td>10.0</td>
+<td>覆盖孝西等3个车站</td>
+</tr>
+<tr>
+<td>X0032</td>
+<td>大同</td>
+<td>DT</td>
+<td>10.0</td>
+<td>覆盖口泉等3个车站</td>
+</tr>
+<tr>
+<td>X0034</td>
+<td>郑州东</td>
+<td>ZZD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0035</td>
+<td>新乡</td>
+<td>XX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0037</td>
+<td>南阳</td>
+<td>NY</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0039</td>
+<td>商丘</td>
+<td>SQ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0041</td>
+<td>汉西</td>
+<td>HX</td>
+<td>10.0</td>
+<td>覆盖安陆等7个车站</td>
+</tr>
+<tr>
+<td>X0042</td>
+<td>襄樊</td>
+<td>XF</td>
+<td>10.0</td>
+<td>覆盖随州等9个车站</td>
+</tr>
+<tr>
+<td>X0044</td>
+<td>青岛</td>
+<td>QD</td>
+<td>10.0</td>
+<td>覆盖青岛港等5个车站</td>
+</tr>
+<tr>
+<td>X0046</td>
+<td>合肥西</td>
+<td>HFX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0048</td>
+<td>常州</td>
+<td>CZ</td>
+<td>10.0</td>
+<td>覆盖镇江南等3个车站</td>
+</tr>
+<tr>
+<td>X0049</td>
+<td>无锡南</td>
+<td>WXN</td>
+<td>10.0</td>
+<td>覆盖戚墅堰</td>
+</tr>
+<tr>
+<td>X0051</td>
+<td>福州东</td>
+<td>FZD</td>
+<td>10.0</td>
+<td>覆盖南平等3个车站</td>
+</tr>
+<tr>
+<td>X0052</td>
+<td>九江南</td>
+<td>JJN</td>
+<td>10.0</td>
+<td>覆盖九江等2个车站</td>
+</tr>
+<tr>
+<td>X0054</td>
+<td>株洲</td>
+<td>ZZ</td>
+<td>10.0</td>
+<td>覆盖醴陵、娄底以及西办理站</td>
+</tr>
+<tr>
+<td>X0055</td>
+<td>堂溪</td>
+<td>TX</td>
+<td>10.0</td>
+<td>覆盖三眼桥等3个办理站</td>
+</tr>
+<tr>
+<td>X0057</td>
+<td>茂名</td>
+<td>MM</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0058</td>
+<td>成都东</td>
+<td>DDD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0060</td>
+<td>贵阳东</td>
+<td>GYD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0061</td>
+<td>杨浦</td>
+<td>YP</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0063</td>
+<td>广通</td>
+<td>GT</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0065</td>
+<td>张掖</td>
+<td>ZY</td>
+<td>10.0</td>
+<td>覆盖武威等4个车站</td>
+</tr>
+<tr>
+<td>X0067</td>
+<td>阿克苏</td>
+<td>AKS</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0068</td>
+<td>西宁</td>
+<td>XN</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0070</td>
+<td>汉中</td>
+<td>HZ</td>
+<td>10.0</td>
+<td>覆盖安康东等6个车站</td>
+</tr>
+<tr>
+<td>X0071</td>
+<td>西安</td>
+<td>XA</td>
+<td>10.0</td>
+<td>覆盖西安西等12个车站</td>
+</tr>
+<tr>
+<td>X0073</td>
+<td>襄樊机修厂</td>
+<td>XFXLC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0075</td>
+<td>大红门</td>
+<td>DHM</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0076</td>
+<td>牡丹江站货运装卸作业所</td>
+<td>MDJ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0078</td>
+<td>沈阳铁路局沈阳装卸机械配件厂</td>
+<td>SYJXJXC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0080</td>
+<td>呼和浩特市吉安铁信集装箱有限责任公司</td>
+<td>HHHT</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0081</td>
+<td>南京铁路西站运输服务所</td>
+<td>NJX</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0083</td>
+<td>南昌铁路局福州东站劳动服务总公司</td>
+<td>FZD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0084</td>
+<td>南昌南车站劳动服务公司</td>
+<td>NCN</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0086</td>
+<td>株洲北站购销公司</td>
+<td>ZZB</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0088</td>
+<td>广州新广双装卸有限公司</td>
+<td>TXHC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0089</td>
+<td>茂名市汇运物流有限公司</td>
+<td>MM</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0091</td>
+<td>成都东维实业有限公司</td>
+<td>CDD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0092</td>
+<td>中国集装箱重庆公司汽车修理厂</td>
+<td>CQD</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0094</td>
+<td>银川铁路经源运贸有限公司</td>
+<td>YC</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0095</td>
+<td>漳州车务段劳动服务公司集装箱修理厂</td>
+<td>ZZCWDLDF</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0097</td>
+<td>巴彦淖尔市天力集装箱维修有限公司</td>
+<td>BYNE</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0098</td>
+<td>深圳南方中集集装箱服务有限公司(昆明)</td>
+<td>KMZJWXZ</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+<tr>
+<td>X0101</td>
+<td>武汉铁路篷布厂</td>
+<td>WHTL</td>
+<td>10.0</td>
+<td>nan</td>
+</tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>修理厂代码</th>
+                  <th>修理厂名称</th>
+                  <th>修理厂拼音码</th>
+                  <th>人工费单价</th>
+                  <th>备注</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+	</div>
+	
+	<div class="tab-pane fade" id="apple">
+		<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">集装箱资产台账信息</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example3" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>箱号代码</th>
+                  <th>箱型代码</th>
+                  <th>集装箱来源代码(00购买新箱，01租用，02受赠，03购置旧箱)</th>
+                  <th>制造厂家代码</th>
+                  <th>投入日期</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+<td>6103254</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5192072</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5486740</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5170366</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5425981</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5913482</td>
+<td>20</td>
+<td>0</td>
+<td>3</td>
+<td>01-9月 -00</td>
+</tr>
+<tr>
+<td>5870837</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-6月 -01</td>
+</tr>
+<tr>
+<td>5593856</td>
+<td>20</td>
+<td>0</td>
+<td>33</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5201533</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5747859</td>
+<td>20</td>
+<td>0</td>
+<td>34</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5507858</td>
+<td>20</td>
+<td>0</td>
+<td>44</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6235332</td>
+<td>20</td>
+<td>0</td>
+<td>3</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>6273271</td>
+<td>20</td>
+<td>0</td>
+<td>24</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5635550</td>
+<td>20</td>
+<td>0</td>
+<td>33</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6137716</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5819727</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>6106490</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>6172337</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>6095523</td>
+<td>20</td>
+<td>0</td>
+<td>23</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5737418</td>
+<td>20</td>
+<td>0</td>
+<td>34</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6268716</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>5158437</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>6056281</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>5900870</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-6月 -01</td>
+</tr>
+<tr>
+<td>5945345</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>5430000</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6256269</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>5302143</td>
+<td>20</td>
+<td>0</td>
+<td>29</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5905635</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-6月 -01</td>
+</tr>
+<tr>
+<td>5972633</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>6060379</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>5156727</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5692062</td>
+<td>20</td>
+<td>0</td>
+<td>27</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5057540</td>
+<td>20</td>
+<td>0</td>
+<td>85</td>
+<td>16-4月 -07</td>
+</tr>
+<tr>
+<td>5516485</td>
+<td>20</td>
+<td>0</td>
+<td>44</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5838542</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>6099880</td>
+<td>20</td>
+<td>0</td>
+<td>23</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5023508</td>
+<td>20</td>
+<td>0</td>
+<td>12</td>
+<td>01-6月 -95</td>
+</tr>
+<tr>
+<td>5351718</td>
+<td>20</td>
+<td>0</td>
+<td>30</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5496985</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6077411</td>
+<td>20</td>
+<td>0</td>
+<td>23</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>6173420</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5154200</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5257511</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5359128</td>
+<td>20</td>
+<td>0</td>
+<td>30</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5036439</td>
+<td>20</td>
+<td>0</td>
+<td>26</td>
+<td>01-6月 -95</td>
+</tr>
+<tr>
+<td>5407946</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5972377</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>5227775</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5434622</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5035746</td>
+<td>20</td>
+<td>0</td>
+<td>26</td>
+<td>01-6月 -95</td>
+</tr>
+<tr>
+<td>5420336</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5057540</td>
+<td>20</td>
+<td>0</td>
+<td>28</td>
+<td>01-1月 -96</td>
+</tr>
+<tr>
+<td>5920820</td>
+<td>20</td>
+<td>0</td>
+<td>3</td>
+<td>01-9月 -00</td>
+</tr>
+<tr>
+<td>5841741</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-6月 -01</td>
+</tr>
+<tr>
+<td>5050571</td>
+<td>20</td>
+<td>0</td>
+<td>27</td>
+<td>01-1月 -96</td>
+</tr>
+<tr>
+<td>5845454</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-6月 -01</td>
+</tr>
+<tr>
+<td>5100800</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5215373</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5214490</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5612581</td>
+<td>20</td>
+<td>0</td>
+<td>33</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6029434</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>5203496</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5416212</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6000765</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5586250</td>
+<td>20</td>
+<td>0</td>
+<td>33</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6179840</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5809631</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5229485</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5911978</td>
+<td>20</td>
+<td>0</td>
+<td>3</td>
+<td>01-9月 -00</td>
+</tr>
+<tr>
+<td>6045100</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>6046616</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>5154262</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>6258364</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>6053554</td>
+<td>20</td>
+<td>0</td>
+<td>7</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>5236308</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>6267577</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-5月 -02</td>
+</tr>
+<tr>
+<td>5840895</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-6月 -01</td>
+</tr>
+<tr>
+<td>5384835</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5290459</td>
+<td>20</td>
+<td>0</td>
+<td>29</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>6191846</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-1月 -02</td>
+</tr>
+<tr>
+<td>5198466</td>
+<td>20</td>
+<td>0</td>
+<td>4</td>
+<td>01-8月 -96</td>
+</tr>
+<tr>
+<td>5428949</td>
+<td>20</td>
+<td>0</td>
+<td>31</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5703526</td>
+<td>20</td>
+<td>0</td>
+<td>27</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5656260</td>
+<td>20</td>
+<td>0</td>
+<td>27</td>
+<td>01-6月 -96</td>
+</tr>
+<tr>
+<td>5100800</td>
+<td>20</td>
+<td>1</td>
+<td>109</td>
+<td>05-7月 -10</td>
+</tr>
+<tr>
+<td>6041363</td>
+<td>20</td>
+<td>0</td>
+<td>1</td>
+<td>01-8月 -01</td>
+</tr>
+<tr>
+<td>5154200</td>
+<td>20</td>
+<td>1</td>
+<td>3</td>
+<td>29-9月 -12</td>
+</tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>箱号代码</th>
+                  <th>箱型代码</th>
+                  <th>集装箱来源代码(00购买新箱，01租用，02受赠，03购置旧箱)</th>
+                  <th>制造厂家代码</th>
+                  <th>投入日期</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+	</div>
+	
+</div>
+   		
+    
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+<!-- jQuery 3 -->
+<script src="AdminLTE-2.4.0-rc/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="AdminLTE-2.4.0-rc/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="AdminLTE-2.4.0-rc/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="AdminLTE-2.4.0-rc/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="AdminLTE-2.4.0-rc/dist/js/adminlte.min.js"></script>
+<!-- Sparkline -->
+<script src="AdminLTE-2.4.0-rc/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap  -->
+<script src="AdminLTE-2.4.0-rc/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="AdminLTE-2.4.0-rc/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll -->
+<script src="AdminLTE-2.4.0-rc/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="AdminLTE-2.4.0-rc/dist/js/pages/dashboard2.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="AdminLTE-2.4.0-rc/dist/js/demo.js"></script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable()
+    $('#example3').DataTable()
+  })
+</script>
+</body>
+</html>

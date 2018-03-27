@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 2 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="../bower_components/morris.js/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!--expand_css-修改index.html页面标题-->
+    <link rel="stylesheet" href="../expand_css/title.css">
+    <!--expand_css-修改index.html页面地图-->
+    <link rel="stylesheet" href="../expand_css/map.css">
+    <!--expand_css-修改index.html页面箱子状态-->
+    <link rel="stylesheet" href="../expand_css/box_status.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="echarts/echarts3.6.2.js"></script>
+    <script src="jquery/jquery-3.2.1.js"></script>
+    <script src="echarts/echarts.min.js"></script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini" style="background-color: black">
+<div class="wrapper"><!--包裹整个网站-->
+
+    <header class="main-header"><!--控制标志和导航栏-->
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>A</b>LT</span>
+            <!-- logo for regular state and mobile devices -->
+            <!--<span class="logo-lg"><b>Admin</b>LTE</span>-->
+            <span class="logo-lg">集装箱管理</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div style="width: ;height: 0px;" id="big_title" class="title">
+                中铁集装箱全生命周期远程智能健康管理与运维服务
+            </div>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- Messages: style can be found in dropdown.less-->
+                    <!-- <li class="dropdown messages-menu">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                         <i class="fa fa-envelope-o"></i>
+                         <span class="label label-success">4</span>
+                       </a>
+                       <ul class="dropdown-menu">
+                         <li class="header">You have 4 messages</li>
+                         <li>
+                           &lt;!&ndash; inner menu: contains the actual data &ndash;&gt;
+                           <ul class="menu">
+                             <li>&lt;!&ndash; start message &ndash;&gt;
+                               <a href="#">
+                                 <div class="pull-left">
+                                   <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                 </div>
+                                 <h4>
+                                   Support Team
+                                   <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                 </h4>
+                                 <p>Why not buy a new awesome theme?</p>
+                               </a>
+                             </li>
+                             &lt;!&ndash; end message &ndash;&gt;
+                             <li>
+                               <a href="#">
+                                 <div class="pull-left">
+                                   <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                 </div>
+                                 <h4>
+                                   AdminLTE Design Team
+                                   <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                 </h4>
+                                 <p>Why not buy a new awesome theme?</p>
+                               </a>
+                             </li>
+                             <li>
+                               <a href="#">
+                                 <div class="pull-left">
+                                   <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                 </div>
+                                 <h4>
+                                   Developers
+                                   <small><i class="fa fa-clock-o"></i> Today</small>
+                                 </h4>
+                                 <p>Why not buy a new awesome theme?</p>
+                               </a>
+                             </li>
+                             <li>
+                               <a href="#">
+                                 <div class="pull-left">
+                                   <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                 </div>
+                                 <h4>
+                                   Sales Department
+                                   <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                 </h4>
+                                 <p>Why not buy a new awesome theme?</p>
+                               </a>
+                             </li>
+                             <li>
+                               <a href="#">
+                                 <div class="pull-left">
+                                   <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                 </div>
+                                 <h4>
+                                   Reviewers
+                                   <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                 </h4>
+                                 <p>Why not buy a new awesome theme?</p>
+                               </a>
+                             </li>
+                           </ul>
+                         </li>
+                         <li class="footer"><a href="#">See All Messages</a></li>
+                       </ul>
+                     </li>-->
+                    <!-- Notifications: style can be found in dropdown.less -->
+                    <li class="dropdown notifications-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">10</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">您有10条消息提醒</li>
+                            <li>
+                                <!-- inner menu: contains the actual data -->
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                            page and may cause design problems
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-users text-red"></i> 5 new members joined
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-user text-red"></i> You changed your username
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">View all</a></li>
+                        </ul>
+                    </li>
+                    <!-- Tasks: style can be found in dropdown.less -->
+                    <!--          <li class="dropdown tasks-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                  <i class="fa fa-flag-o"></i>
+                                  <span class="label label-danger">9</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                  <li class="header">You have 9 tasks</li>
+                                  <li>
+                                    &lt;!&ndash; inner menu: contains the actual data &ndash;&gt;
+                                    <ul class="menu">
+                                      <li>&lt;!&ndash; Task item &ndash;&gt;
+                                        <a href="#">
+                                          <h3>
+                                            Design some buttons
+                                            <small class="pull-right">20%</small>
+                                          </h3>
+                                          <div class="progress xs">
+                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                              <span class="sr-only">20% Complete</span>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </li>
+                                      &lt;!&ndash; end task item &ndash;&gt;
+                                      <li>&lt;!&ndash; Task item &ndash;&gt;
+                                        <a href="#">
+                                          <h3>
+                                            Create a nice theme
+                                            <small class="pull-right">40%</small>
+                                          </h3>
+                                          <div class="progress xs">
+                                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                              <span class="sr-only">40% Complete</span>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </li>
+                                      &lt;!&ndash; end task item &ndash;&gt;
+                                      <li>&lt;!&ndash; Task item &ndash;&gt;
+                                        <a href="#">
+                                          <h3>
+                                            Some task I need to do
+                                            <small class="pull-right">60%</small>
+                                          </h3>
+                                          <div class="progress xs">
+                                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                              <span class="sr-only">60% Complete</span>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </li>
+                                      &lt;!&ndash; end task item &ndash;&gt;
+                                      <li>&lt;!&ndash; Task item &ndash;&gt;
+                                        <a href="#">
+                                          <h3>
+                                            Make beautiful transitions
+                                            <small class="pull-right">80%</small>
+                                          </h3>
+                                          <div class="progress xs">
+                                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                              <span class="sr-only">80% Complete</span>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </li>
+                                      &lt;!&ndash; end task item &ndash;&gt;
+                                    </ul>
+                                  </li>
+                                  <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                  </li>
+                                </ul>
+                              </li>-->
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">管理员1</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                <p>
+                                    管理员1 - 健康监测员
+                                    <!--<small>Member since Nov. 2017</small>-->
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <!--              <li class="user-body">
+                                            <div class="row">
+                                              <div class="col-xs-4 text-center">
+                                                <a href="#">Followers</a>
+                                              </div>
+                                              <div class="col-xs-4 text-center">
+                                                <a href="#">Sales</a>
+                                              </div>
+                                              <div class="col-xs-4 text-center">
+                                                <a href="#">Friends</a>
+                                              </div>
+                                            </div>
+                                            &lt;!&ndash; /.row &ndash;&gt;
+                                          </li>-->
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">人员简介</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">退出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Control Sidebar Toggle Button -->
+                    <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar"><!--aside用于文章的侧栏-->
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>管理员1</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+                </div>
+            </form>
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">集装箱管理平台</li>
+                <!--<li class="active treeview">-->
+                <li>
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>健康监测</span>
+                        <span class="pull-right-container">
+            </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="test4.html">
+                        <i class="fa fa-files-o"></i>
+                        <span>健康查询</span>
+                        <span class="pull-right-container">
+            </span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pie-chart"></i>
+                        <span>健康预测</span>
+                        <span class="pull-right-container">
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                        <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                        <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                        <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>健康分析</span>
+                        <span class="pull-right-container">
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                        <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                        <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                        <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                        <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>维修建议</span>
+                        <span class="pull-right-container">
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                        <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                    </ul>
+                </li>
+
+                <li class="header">数据平台</li>
+                <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>基础数据</span></a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>参数设置</span></a></li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content  --><!--控制网页标题和内容-->
+    <div class="content-wrapper" style="padding-top: 0px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;background-color: black">
+            <div class="container" style="width: 100%;height: 100%">
+                <div class="row clearfix" style="">
+                    <div class="col-sm-6 col-md-6 col-lg-6" style="padding: 0px;margin: 0px">
+                        <div id="health_control" style="width: 100%;height: 750%;"></div>
+                        <script src="../echarts/echarts3.6.2.js"></script>
+                        <script src="../echarts/china.js"></script>
+                        <script>
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('health_control'));
+                            var data = [
+                                {name: '海门', value: 9},
+                                {name: '鄂尔多斯', value: 12},
+                                {name: '招远', value: 12},
+                                {name: '舟山', value: 12},
+                                {name: '齐齐哈尔', value: 14},
+                                {name: '盐城', value: 15},
+                                {name: '赤峰', value: 16},
+                                {name: '青岛', value: 18},
+                                {name: '乳山', value: 18},
+                                {name: '金昌', value: 19},
+                                {name: '泉州', value: 21},
+                                {name: '莱西', value: 21},
+                                {name: '日照', value: 21},
+                                {name: '胶南', value: 22},
+                                {name: '南通', value: 23},
+                                {name: '拉萨', value: 24},
+                                {name: '云浮', value: 24},
+                                {name: '梅州', value: 25},
+                                {name: '文登', value: 25},
+                                {name: '上海', value: 25},
+                                {name: '攀枝花', value: 25},
+                                {name: '威海', value: 25},
+                                {name: '承德', value: 25},
+                                {name: '厦门', value: 26},
+                                {name: '汕尾', value: 26},
+                                {name: '潮州', value: 26},
+                                {name: '丹东', value: 27},
+                                {name: '太仓', value: 27},
+                                {name: '曲靖', value: 27},
+                                {name: '烟台', value: 28},
+                                {name: '福州', value: 29},
+                                {name: '瓦房店', value: 30},
+                                {name: '即墨', value: 30},
+                                {name: '抚顺', value: 31},
+                                {name: '玉溪', value: 31},
+                                {name: '张家口', value: 31},
+                                {name: '阳泉', value: 31},
+                                {name: '莱州', value: 32},
+                                {name: '湖州', value: 32},
+                                {name: '汕头', value: 32},
+                                {name: '昆山', value: 33},
+                                {name: '宁波', value: 33},
+                                {name: '湛江', value: 33},
+                                {name: '揭阳', value: 34},
+                                {name: '荣成', value: 34},
+                                {name: '连云港', value: 35},
+                                {name: '葫芦岛', value: 35},
+                                {name: '常熟', value: 36},
+                                {name: '东莞', value: 36},
+                                {name: '河源', value: 36},
+                                {name: '淮安', value: 36},
+                                {name: '泰州', value: 36},
+                                {name: '南宁', value: 37},
+                                {name: '营口', value: 37},
+                                {name: '惠州', value: 37},
+                                {name: '江阴', value: 37},
+                                {name: '蓬莱', value: 37},
+                                {name: '韶关', value: 38},
+                                {name: '嘉峪关', value: 38},
+                                {name: '广州', value: 38},
+                                {name: '延安', value: 38},
+                                {name: '太原', value: 39},
+                                {name: '清远', value: 39},
+                                {name: '中山', value: 39},
+                                {name: '昆明', value: 39},
+                                {name: '寿光', value: 40},
+                                {name: '盘锦', value: 40},
+                                {name: '长治', value: 41},
+                                {name: '深圳', value: 41},
+                                {name: '珠海', value: 42},
+                                {name: '宿迁', value: 43},
+                                {name: '咸阳', value: 43},
+                                {name: '铜川', value: 44},
+                                {name: '平度', value: 44},
+                                {name: '佛山', value: 44},
+                                {name: '海口', value: 44},
+                                {name: '江门', value: 45},
+                                {name: '章丘', value: 45},
+                                {name: '肇庆', value: 46},
+                                {name: '大连', value: 47},
+                                {name: '临汾', value: 47},
+                                {name: '吴江', value: 47},
+                                {name: '石嘴山', value: 49},
+                                {name: '沈阳', value: 50},
+                                {name: '苏州', value: 50},
+                                {name: '茂名', value: 50},
+                                {name: '嘉兴', value: 51},
+                                {name: '长春', value: 51},
+                                {name: '胶州', value: 52},
+                                {name: '银川', value: 52},
+                                {name: '张家港', value: 52},
+                                {name: '三门峡', value: 53},
+                                {name: '锦州', value: 54},
+                                {name: '南昌', value: 54},
+                                {name: '柳州', value: 54},
+                                {name: '三亚', value: 54},
+                                {name: '自贡', value: 56},
+                                {name: '吉林', value: 56},
+                                {name: '阳江', value: 57},
+                                {name: '泸州', value: 57},
+                                {name: '西宁', value: 57},
+                                {name: '宜宾', value: 58},
+                                {name: '呼和浩特', value: 58},
+                                {name: '成都', value: 58},
+                                {name: '大同', value: 58},
+                                {name: '镇江', value: 59},
+                                {name: '桂林', value: 59},
+                                {name: '张家界', value: 59},
+                                {name: '宜兴', value: 59},
+                                {name: '北海', value: 60},
+                                {name: '西安', value: 61},
+                                {name: '金坛', value: 62},
+                                {name: '东营', value: 62},
+                                {name: '牡丹江', value: 63},
+                                {name: '遵义', value: 63},
+                                {name: '绍兴', value: 63},
+                                {name: '扬州', value: 64},
+                                {name: '常州', value: 64},
+                                {name: '潍坊', value: 65},
+                                {name: '重庆', value: 66},
+                                {name: '台州', value: 67},
+                                {name: '南京', value: 67},
+                                {name: '滨州', value: 70},
+                                {name: '贵阳', value: 71}
+                            ];
+                            var data1 = [
+                                {name: '无锡', value: 71},
+                                {name: '本溪', value: 71},
+                                {name: '克拉玛依', value: 72},
+                                {name: '渭南', value: 72},
+                                {name: '马鞍山', value: 72},
+                                {name: '宝鸡', value: 72},
+                                {name: '焦作', value: 75},
+                                {name: '句容', value: 75},
+                                {name: '北京', value: 79},
+                                {name: '徐州', value: 79},
+                                {name: '衡水', value: 80},
+                                {name: '包头', value: 80},
+                                {name: '绵阳', value: 80},
+                                {name: '乌鲁木齐', value: 84},
+                                {name: '枣庄', value: 84},
+                                {name: '杭州', value: 84},
+                                {name: '淄博', value: 85},
+                                {name: '鞍山', value: 86},
+                                {name: '溧阳', value: 86},
+                                {name: '库尔勒', value: 86},
+                                {name: '安阳', value: 90},
+                                {name: '开封', value: 90},
+                                {name: '济南', value: 92},
+                                {name: '德阳', value: 93},
+                                {name: '温州', value: 95},
+                                {name: '九江', value: 96},
+                                {name: '邯郸', value: 98},
+                                {name: '临安', value: 99},
+                                {name: '兰州', value: 99},
+                                {name: '沧州', value: 100},
+                                {name: '临沂', value: 103},
+                                {name: '南充', value: 104},
+                                {name: '天津', value: 105},
+                                {name: '富阳', value: 106},
+                                {name: '泰安', value: 112},
+                                {name: '诸暨', value: 112},
+                                {name: '郑州', value: 113},
+                                {name: '哈尔滨', value: 114},
+                                {name: '聊城', value: 116},
+                                {name: '芜湖', value: 117},
+                                {name: '唐山', value: 119},
+                                {name: '平顶山', value: 119},
+                                {name: '邢台', value: 119},
+                                {name: '德州', value: 120},
+                                {name: '济宁', value: 120},
+                                {name: '荆州', value: 127},
+                                {name: '宜昌', value: 130},
+                                {name: '义乌', value: 132},
+                                {name: '丽水', value: 133},
+                                {name: '洛阳', value: 134},
+                                {name: '秦皇岛', value: 136},
+                                {name: '株洲', value: 143},
+                                {name: '石家庄', value: 147},
+                                {name: '莱芜', value: 148},
+                                {name: '常德', value: 152},
+                                {name: '保定', value: 153},
+                                {name: '湘潭', value: 154},
+                                {name: '金华', value: 157},
+                                {name: '岳阳', value: 169},
+                                {name: '长沙', value: 175},
+                                {name: '衢州', value: 177},
+                                {name: '廊坊', value: 193},
+                                {name: '菏泽', value: 194},
+                                {name: '合肥', value: 229},
+                                {name: '武汉', value: 273},
+                                {name: '大庆', value: 279}
+                            ];
+                            var geoCoordMap = {
+                                '海门':[121.15,31.89],
+                                '鄂尔多斯':[109.781327,39.608266],
+                                '招远':[120.38,37.35],
+                                '舟山':[122.207216,29.985295],
+                                '齐齐哈尔':[123.97,47.33],
+                                '盐城':[120.13,33.38],
+                                '赤峰':[118.87,42.28],
+                                '青岛':[120.33,36.07],
+                                '乳山':[121.52,36.89],
+                                '金昌':[102.188043,38.520089],
+                                '泉州':[118.58,24.93],
+                                '莱西':[120.53,36.86],
+                                '日照':[119.46,35.42],
+                                '胶南':[119.97,35.88],
+                                '南通':[121.05,32.08],
+                                '拉萨':[91.11,29.97],
+                                '云浮':[112.02,22.93],
+                                '梅州':[116.1,24.55],
+                                '文登':[122.05,37.2],
+                                '上海':[121.48,31.22],
+                                '攀枝花':[101.718637,26.582347],
+                                '威海':[122.1,37.5],
+                                '承德':[117.93,40.97],
+                                '厦门':[118.1,24.46],
+                                '汕尾':[115.375279,22.786211],
+                                '潮州':[116.63,23.68],
+                                '丹东':[124.37,40.13],
+                                '太仓':[121.1,31.45],
+                                '曲靖':[103.79,25.51],
+                                '烟台':[121.39,37.52],
+                                '福州':[119.3,26.08],
+                                '瓦房店':[121.979603,39.627114],
+                                '即墨':[120.45,36.38],
+                                '抚顺':[123.97,41.97],
+                                '玉溪':[102.52,24.35],
+                                '张家口':[114.87,40.82],
+                                '阳泉':[113.57,37.85],
+                                '莱州':[119.942327,37.177017],
+                                '湖州':[120.1,30.86],
+                                '汕头':[116.69,23.39],
+                                '昆山':[120.95,31.39],
+                                '宁波':[121.56,29.86],
+                                '湛江':[110.359377,21.270708],
+                                '揭阳':[116.35,23.55],
+                                '荣成':[122.41,37.16],
+                                '连云港':[119.16,34.59],
+                                '葫芦岛':[120.836932,40.711052],
+                                '常熟':[120.74,31.64],
+                                '东莞':[113.75,23.04],
+                                '河源':[114.68,23.73],
+                                '淮安':[119.15,33.5],
+                                '泰州':[119.9,32.49],
+                                '南宁':[108.33,22.84],
+                                '营口':[122.18,40.65],
+                                '惠州':[114.4,23.09],
+                                '江阴':[120.26,31.91],
+                                '蓬莱':[120.75,37.8],
+                                '韶关':[113.62,24.84],
+                                '嘉峪关':[98.289152,39.77313],
+                                '广州':[113.23,23.16],
+                                '延安':[109.47,36.6],
+                                '太原':[112.53,37.87],
+                                '清远':[113.01,23.7],
+                                '中山':[113.38,22.52],
+                                '昆明':[102.73,25.04],
+                                '寿光':[118.73,36.86],
+                                '盘锦':[122.070714,41.119997],
+                                '长治':[113.08,36.18],
+                                '深圳':[114.07,22.62],
+                                '珠海':[113.52,22.3],
+                                '宿迁':[118.3,33.96],
+                                '咸阳':[108.72,34.36],
+                                '铜川':[109.11,35.09],
+                                '平度':[119.97,36.77],
+                                '佛山':[113.11,23.05],
+                                '海口':[110.35,20.02],
+                                '江门':[113.06,22.61],
+                                '章丘':[117.53,36.72],
+                                '肇庆':[112.44,23.05],
+                                '大连':[121.62,38.92],
+                                '临汾':[111.5,36.08],
+                                '吴江':[120.63,31.16],
+                                '石嘴山':[106.39,39.04],
+                                '沈阳':[123.38,41.8],
+                                '苏州':[120.62,31.32],
+                                '茂名':[110.88,21.68],
+                                '嘉兴':[120.76,30.77],
+                                '长春':[125.35,43.88],
+                                '胶州':[120.03336,36.264622],
+                                '银川':[106.27,38.47],
+                                '张家港':[120.555821,31.875428],
+                                '三门峡':[111.19,34.76],
+                                '锦州':[121.15,41.13],
+                                '南昌':[115.89,28.68],
+                                '柳州':[109.4,24.33],
+                                '三亚':[109.511909,18.252847],
+                                '自贡':[104.778442,29.33903],
+                                '吉林':[126.57,43.87],
+                                '阳江':[111.95,21.85],
+                                '泸州':[105.39,28.91],
+                                '西宁':[101.74,36.56],
+                                '宜宾':[104.56,29.77],
+                                '呼和浩特':[111.65,40.82],
+                                '成都':[104.06,30.67],
+                                '大同':[113.3,40.12],
+                                '镇江':[119.44,32.2],
+                                '桂林':[110.28,25.29],
+                                '张家界':[110.479191,29.117096],
+                                '宜兴':[119.82,31.36],
+                                '北海':[109.12,21.49],
+                                '西安':[108.95,34.27],
+                                '金坛':[119.56,31.74],
+                                '东营':[118.49,37.46],
+                                '牡丹江':[129.58,44.6],
+                                '遵义':[106.9,27.7],
+                                '绍兴':[120.58,30.01],
+                                '扬州':[119.42,32.39],
+                                '常州':[119.95,31.79],
+                                '潍坊':[119.1,36.62],
+                                '重庆':[106.54,29.59],
+                                '台州':[121.420757,28.656386],
+                                '南京':[118.78,32.04],
+                                '滨州':[118.03,37.36],
+                                '贵阳':[106.71,26.57],
+                                '无锡':[120.29,31.59],
+                                '本溪':[123.73,41.3],
+                                '克拉玛依':[84.77,45.59],
+                                '渭南':[109.5,34.52],
+                                '马鞍山':[118.48,31.56],
+                                '宝鸡':[107.15,34.38],
+                                '焦作':[113.21,35.24],
+                                '句容':[119.16,31.95],
+                                '北京':[116.46,39.92],
+                                '徐州':[117.2,34.26],
+                                '衡水':[115.72,37.72],
+                                '包头':[110,40.58],
+                                '绵阳':[104.73,31.48],
+                                '乌鲁木齐':[87.68,43.77],
+                                '枣庄':[117.57,34.86],
+                                '杭州':[120.19,30.26],
+                                '淄博':[118.05,36.78],
+                                '鞍山':[122.85,41.12],
+                                '溧阳':[119.48,31.43],
+                                '库尔勒':[86.06,41.68],
+                                '安阳':[114.35,36.1],
+                                '开封':[114.35,34.79],
+                                '济南':[117,36.65],
+                                '德阳':[104.37,31.13],
+                                '温州':[120.65,28.01],
+                                '九江':[115.97,29.71],
+                                '邯郸':[114.47,36.6],
+                                '临安':[119.72,30.23],
+                                '兰州':[103.73,36.03],
+                                '沧州':[116.83,38.33],
+                                '临沂':[118.35,35.05],
+                                '南充':[106.110698,30.837793],
+                                '天津':[117.2,39.13],
+                                '富阳':[119.95,30.07],
+                                '泰安':[117.13,36.18],
+                                '诸暨':[120.23,29.71],
+                                '郑州':[113.65,34.76],
+                                '哈尔滨':[126.63,45.75],
+                                '聊城':[115.97,36.45],
+                                '芜湖':[118.38,31.33],
+                                '唐山':[118.02,39.63],
+                                '平顶山':[113.29,33.75],
+                                '邢台':[114.48,37.05],
+                                '德州':[116.29,37.45],
+                                '济宁':[116.59,35.38],
+                                '荆州':[112.239741,30.335165],
+                                '宜昌':[111.3,30.7],
+                                '义乌':[120.06,29.32],
+                                '丽水':[119.92,28.45],
+                                '洛阳':[112.44,34.7],
+                                '秦皇岛':[119.57,39.95],
+                                '株洲':[113.16,27.83],
+                                '石家庄':[114.48,38.03],
+                                '莱芜':[117.67,36.19],
+                                '常德':[111.69,29.05],
+                                '保定':[115.48,38.85],
+                                '湘潭':[112.91,27.87],
+                                '金华':[119.64,29.12],
+                                '岳阳':[113.09,29.37],
+                                '长沙':[113,28.21],
+                                '衢州':[118.88,28.97],
+                                '廊坊':[116.7,39.53],
+                                '菏泽':[115.480656,35.23375],
+                                '合肥':[117.27,31.86],
+                                '武汉':[114.31,30.52],
+                                '大庆':[125.03,46.58]
+                            };
+
+                            var convertData = function (data) {
+                                var res = [];
+                                for (var i = 0; i < data.length; i++) {
+                                    var geoCoord = geoCoordMap[data[i].name];
+                                    if (geoCoord) {
+                                        res.push({
+                                            name: data[i].name,
+                                            value: geoCoord.concat(data[i].value)
+                                        });
+                                    }
+                                }
+                                return res;
+                            };
+
+                            option = {
+                                backgroundColor: '#404a59',
+                                title: {
+                                    text: '中铁集装箱各地分布状态',
+                                    left: 'center',
+                                    textStyle: {
+                                        color: 'yellow',
+                                        fontWeight:'normal',
+                                        fontSize:'25'
+                                    }
+                                },
+                                tooltip : {
+                                    trigger: 'item'
+                                },
+                                legend: {
+                                    orient: 'vertical',
+                                    y: 'bottom',
+                                    x:'right',
+                                    textStyle: {
+                                        color: '#fff'
+                                    }
+                                },
+                                geo: {
+                                    map: 'china',
+                                    label: {
+                                        emphasis: {
+                                            show: false
+                                        }
+                                    },
+                                    roam: false,
+                                    itemStyle: {
+                                        normal: {
+                                            areaColor: '#323c48',
+                                            borderColor: '#111'
+                                        },
+                                        emphasis: {
+                                            areaColor: '#2a333d'
+                                        }
+                                    }
+                                },
+                                series : [
+                                    {
+                                        name: 'pm2.5',
+                                        type: 'scatter',
+                                        coordinateSystem: 'geo',
+                                        data: convertData(data),
+                                        symbolSize:4,
+                                        label: {
+                                            normal: {
+                                                formatter: '{b}',
+                                                position: 'right',
+                                                show: false
+                                            },
+                                            emphasis: {
+                                                show: true
+                                            }
+                                        },
+                                        itemStyle: {
+                                            normal: {
+                                                color: '#ddb926'
+                                            }
+                                        }
+                                    },
+                                    {
+                                        name: 'pm2.5',
+                                        type: 'scatter',
+                                        coordinateSystem: 'geo',
+                                        data: convertData(data1),
+                                        symbolSize: 4,
+                                        label: {
+                                            normal: {
+                                                formatter: '{b}',
+                                                position: 'right',
+                                                show: false
+                                            },
+                                            emphasis: {
+                                                show: true
+                                            }
+                                        },
+                                        itemStyle: {
+                                            normal: {
+                                                color: 'red'
+                                            }
+                                        }
+                                    }
+                                ]
+                            };
+
+
+
+
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart.setOption(option);
+                        </script>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3" style="padding: 0px;margin: 0px">
+                        <div class="row clearfix">
+                            <div id="pie" style="width: 95%;height: 375%"></div>
+                            <script>
+                                var myChart = echarts.init(document.getElementById('pie'));
+                                option = {
+                                    title : {
+                                        text: '集装箱健康级别占比',
+                                        textStyle: {
+                                            color: 'yellow',
+                                            fontSize:15,
+                                            fontFamily: 'Verdana',
+                                            fontWeight:'normal'
+                                        },
+                                        x:'center'
+                                    },
+                                    tooltip : {
+                                        trigger: 'item',
+                                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                    },
+                                    backgroundColor: '#404a59',
+                                    series : [
+                                        {
+                                            name: '访问来源',
+                                            type: 'pie',
+                                            radius : '35%',
+                                            center: ['50%', '60%'],
+                                            data:[
+                                                {value:335, name:'健康级别I'},
+                                                {value:310, name:'健康级别II'},
+                                                {value:234, name:'健康级别III'},
+                                                {value:135, name:'健康级别V'},
+                                                {value:1548, name:'健康级别IV'}
+                                            ],
+                                            itemStyle: {
+                                                emphasis: {
+                                                    shadowBlur: 10,
+                                                    shadowOffsetX: 0,
+                                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                                }
+                                            }
+                                        }
+                                    ]
+                                };
+
+
+                                // 使用刚指定的配置项和数据显示图表。
+                                myChart.setOption(option);
+                            </script>
+                        </div>
+                        <div class="row clearfix">
+                            <div id="line" style="width: 95%;height: 375%"></div>
+                            <script>
+                                var myChart = echarts.init(document.getElementById('line'));
+
+                                option = {
+                                    title:{
+                                        textStyle:{
+                                            color:'yellow',
+                                            fontStyle:'normal',
+                                            fontSize:'15',
+                                            fontFamily:'Verdana',
+                                            fontWeight:'lighter'
+                                        },
+                                        text:'所有集装箱每月发货总次数',
+                                        left:'10%'
+                                    },
+                                    backgroundColor:'#404a59',
+                                    color: ['yellow'],
+                                    tooltip : {
+                                        trigger: 'axis',
+                                        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                                            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                                        }
+                                    },
+                                    grid: {
+                                        left: '3%',
+                                        right: '4%',
+                                        bottom: '3%',
+                                        containLabel: true
+                                    },
+                                    xAxis : [
+                                        {
+                                            type : 'category',
+                                            data : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July','Aug','Sept','Oct','Nove','Dec'],
+                                            axisTick: {
+                                                alignWithLabel: true
+                                            },
+                                            axisLine:{
+                                                lineStyle:{
+                                                    color:'white',
+                                                },
+                                                show:true
+                                            },
+                                            splitLine:{
+                                                show:false
+                                            }
+
+                                        }
+                                    ],
+                                    yAxis : [
+                                        {
+                                            type : 'value',
+                                            axisLine:{
+                                                show:false,
+                                                lineStyle:{
+                                                    color:'white'
+                                                }
+                                            },
+                                            axisTick:{
+                                                show:false
+                                            },
+                                            splitLine:{
+                                                show:false
+                                            }
+                                        }
+                                    ],
+                                    series : [
+                                        {
+                                            name:'直接访问',
+                                            type:'bar',
+                                            barWidth: '60%',
+                                            data:[30000, 45000, 38999, 23454,43123, 33222, 23143,43222,23432,23222,11211,12311]
+                                        }
+                                    ]
+                                };
+
+                                // 使用刚指定的配置项和数据显示图表。
+                                myChart.setOption(option);
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3" style="padding: 0px;height: 110%">
+                        <div style="background-color: black;padding: 0px">
+                            <ul>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    集装箱现保有量:299342
+                                </li>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    异常集装箱数量:12341
+                                </li>
+                                <br>
+                                <br>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    状态I级集装箱数量:152342
+                                </li>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    状态II级集装箱数量:54642
+                                </li>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    状态III级集装箱数量:871234
+                                </li>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    状态V级集装箱数量:871234
+                                </li>
+                                <br>
+                                <li style="font-size: 100%;color: #00FFFF">
+                                    状态IV级集装箱数量:871234
+                                </li>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix" style="padding: 0px;">
+                    <div class="col-sm-4 col-md-4 col-lg-4" style="padding: 0px;margin: 0px">
+                    <div id ="area" style="background-color: #00a65a;height: 242%;width: 100%"></div>
+                    <script>
+                        var myChart = echarts.init(document.getElementById('area'));
+                        option = {
+                            backgroundColor: 'black',
+                            title: {
+                                text: '集装箱历史发货重量总声明重',
+                                textStyle: {
+                                    fontWeight: 'normal',
+                                    fontSize: 15,
+                                    color: 'white',
+                                },
+                                left: '30%'
+                            },
+                            tooltip: {
+                                trigger: 'axis', //触发类型。[ default: 'item' ] :数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用;'axis'坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用
+                                axisPointer: {
+                                    lineStyle: {
+                                        color: '#57617B'
+                                    }
+                                }
+                            },
+                            legend: {
+                                icon: 'rect', //设置图例的图形形状，circle为圆，rect为矩形
+                                itemWidth: 14, //图例标记的图形宽度[ default: 25 ]
+                                itemHeight: 5, //图例标记的图形高度。[ default: 14 ]
+                                itemGap: 13, //图例每项之间的间隔。横向布局时为水平间隔，纵向布局时为纵向间隔。[ default: 10 ]
+                                //  data: ['移动', '电信', '联通'],
+                                right: '4%', //图例组件离容器右侧的距离
+                                textStyle: {
+                                    fontSize: 12,
+                                    color: '#F1F1F3'
+                                }
+                            },
+                            grid: {
+                                left: '3%', //grid 组件离容器左侧的距离。
+                                right: '4%', //grid 组件离容器右侧的距离。
+                                bottom: '3%', //grid 组件离容器下侧的距离。
+                                containLabel: true //grid 区域是否包含坐标轴的刻度标签[ default: false ]
+                            },
+                            xAxis: [{
+                                type: 'category',
+                                boundaryGap: false, //坐标轴两边留白策略，类目轴和非类目轴的设置和表现不一样
+                                axisLine: {
+                                    lineStyle: {
+                                        color: '#57617B' //坐标轴线线的颜色。
+                                    }
+                                },
+                                axisLabel: {
+                                    margin: 10, //刻度标签与轴线之间的距离
+                                    textStyle: {
+                                        fontSize: 10 ,//文字的字体大小
+                                        color:'white'
+                                    }
+                                },
+                                data: ['2010','2011', '2012', '2013', '2014', '2015', '2016']
+                            }],
+                            yAxis: [{
+                                type: 'value', //坐标轴类型。'value' 数值轴，适用于连续数据;'category' 类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据;'time' 时间轴;'log' 对数轴.
+                                name: '集装箱运货总重量(万吨)', //坐标轴名称。
+                                axisTick: {
+                                    show: false //是否显示坐标轴刻度
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: 'white' //坐标轴线线的颜色
+                                    }
+                                },
+                                axisLabel: {
+                                    margin: 10, //刻度标签与轴线之间的距离
+                                    textStyle: {
+                                        fontSize: 10 ,//文字的字体大小
+                                        color:'white'
+                                    }
+                                },
+                                splitLine: {
+                                    show:false,
+                                    lineStyle: {
+                                        color: '#57617B' //分隔线颜色设置
+                                    }
+                                }
+                            }],
+                            series: [{
+                                name: '集装箱', //系列名称，用于tooltip的显示，legend 的图例筛选，在 setOption 更新数据和配置项时用于指定对应的系列
+                                type: 'line',
+                                smooth: true, //是否平滑曲线显示
+                                symbol: 'circle', //标记的图形。ECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                                symbolSize: 5, //标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，例如 [20, 10] 表示标记宽为20，高为10[ default: 4 ]
+                                showSymbol: false, //是否显示 symbol, 如果 false 则只有在 tooltip hover 的时候显示
+                                lineStyle: { //线条样式
+                                    normal: {
+                                        width: 1 //线宽。[ default: 2 ]
+                                    }
+                                },
+                                areaStyle: { //区域填充样式
+                                    normal: {
+                                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ //填充的颜色。
+                                            offset: 0, // 0% 处的颜色
+                                            color: 'rgba(137, 189, 27, 0.3)'
+                                        }, {
+                                            offset: 0.8, // 80% 处的颜色
+                                            color: 'rgba(137, 189, 27, 0)'
+                                        }], false),
+                                        shadowColor: 'rgba(0, 0, 0, 0.1)', //阴影颜色。支持的格式同color
+                                        shadowBlur: 10 //图形阴影的模糊大小。该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果
+                                    }
+                                },
+                                itemStyle: { //折线拐点标志的样式
+                                    normal: {
+                                        color: 'rgb(137,189,27)',
+                                        borderColor: 'rgba(137,189,2,0.27)', //图形的描边颜色。支持的格式同 color
+                                        borderWidth: 12 //描边线宽。为 0 时无描边。[ default: 0 ]
+
+                                    }
+                                },
+                                data: [22000000, 23453000, 31000000, 33420000, 36510000, 38000000, 41220000]
+                            },  ]
+                        };;
+                        // 使用刚指定的配置项和数据显示图表。
+                        myChart.setOption(option);
+                    </script>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4" style="padding: 0px;margin: 0px">
+                        <div style="background-color: black;height: 150%">
+                            <table class="table" style="background-color: black;height: 100%">
+                                <thead>
+                                <tr style="color: yellow;font-family: 微软雅黑;font-size: 30;font-weight: normal;font-style: normal;height: 200%">
+                                    <th style="font-style: normal;font-weight: normal">
+                                        集装箱箱号代码
+                                    </th>
+                                    <th>
+                                        发货时间
+                                    </th>
+                                    <th>
+                                        货品品类
+                                    </th>
+                                    <th>
+                                        发站/到站
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody style="background-color: black">
+                                <tr style="color: yellow">
+                                    <td>
+                                        32141243
+                                    </td>
+                                    <td>
+                                        01/04/2017
+                                    </td>
+                                    <td>
+                                        褐煤
+                                    </td>
+                                    <td>
+                                        秦皇岛/景德镇
+                                    </td>
+                                </tr>
+                                <tr style="color: yellow">
+                                    <td>
+                                        12311233
+                                    </td>
+                                    <td>
+                                        02/04/2017
+                                    </td>
+                                    <td>
+                                        大米
+                                    </td>
+                                    <td>
+                                        吉林/北京
+                                    </td>
+                                </tr>
+                                <tr style="color: yellow">
+                                    <td>
+                                        12312333
+                                    </td>
+                                    <td>
+                                        02/04/2017
+                                    </td>
+                                    <td>
+                                        陶瓷
+                                    </td>
+                                    <td>
+                                        景德镇/广州
+                                    </td>
+                                </tr>
+                                <tr style="color: yellow">
+                                    <td>
+                                        31234143
+                                    </td>
+                                    <td>
+                                        03/04/2017
+                                    </td>
+                                    <td>
+                                        铝锭
+                                    </td>
+                                    <td>
+                                        天津/上海
+                                    </td>
+                                </tr>
+                                <tr style="color: yellow">
+                                    <td>
+                                        42342223
+                                    </td>
+                                    <td>
+                                        04/04/2012
+                                    </td>
+                                    <td>
+                                        玉米
+                                    </td>
+                                    <td>
+                                        长春/天津
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4" style="padding: 0px;margin: 0px">
+                        <div id="linestyle" style="height: 242%;width: 100%"></div>
+                        <script>
+                            var myChart = echarts.init(document.getElementById('linestyle'));
+                            option = {
+                                backgroundColor:'black',
+                                title: {
+                                    text: '集装箱保有量变化',
+                                    textStyle:{
+                                        color:'yellow',
+                                        fontStyle:'normal',
+                                        fontWeight:'normal',
+                                        fontSize:15
+                                    },
+                                    left:'35%'
+                                },
+                                tooltip: {
+                                    trigger: 'axis'
+                                },
+                                grid: {
+                                    left: '3%',
+                                    right: '4%',
+                                    bottom: '3%',
+                                    containLabel: true
+                                },
+                                xAxis: {
+                                    show:true,
+                                    type: 'category',
+                                    boundaryGap: false,
+                                    data: ['2011','2012','2013','2014','2015','2016','2017'],
+                                    axisLine:{
+                                        lineStyle:{
+                                            color:'white'
+                                        },
+
+                                    },
+                                    splitLine:{
+                                        show:false,
+                                        lineStyle:{
+                                            color:'black',
+                                        }
+                                    }
+                                },
+                                yAxis: {
+                                    type: 'value',
+                                    show:true,
+                                    axisLine:{
+                                        show:true,
+                                    },
+                                    splitLine:{
+                                        show:false,
+                                    },
+                                    axisTick:{
+                                        show:false,
+                                    },
+                                    axisLabel:{
+                                        textStyle:{
+                                            color:'white'
+                                        }
+                                    }
+
+                                },
+                                series: [
+                                    {
+                                        name:'',
+                                        type:'line',
+                                        stack: '总量',
+                                        data:[120000, 163000, 183099, 210000, 221232, 242321, 253432],
+                                        lineStyle:{
+                                            normal:{
+                                                color:'yellow'
+                                            }
+
+                                        }
+                                    }
+                                ]
+                            };
+
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart.setOption(option);
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+        <!--</section>-->
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.4.0
+        </div>
+        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                                <p>New phone +1(800)555-1234</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                                <p>nora@example.com</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                                <p>Execution time 5 seconds</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class="control-sidebar-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Custom Template Design
+                                <span class="label label-danger pull-right">70%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Update Resume
+                                <span class="label label-success pull-right">95%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Laravel Integration
+                                <span class="label label-warning pull-right">50%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <h4 class="control-sidebar-subheading">
+                                Back End Framework
+                                <span class="label label-primary pull-right">68%</span>
+                            </h4>
+
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Allow mail redirect
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Other sets of options are available
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Expose author name in posts
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+
+                        <p>
+                            Allow the user to show his name in blog posts
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Show me as online
+                            <input type="checkbox" class="pull-right" checked>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Turn off notifications
+                            <input type="checkbox" class="pull-right">
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Delete chat history
+                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                        </label>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="bower_components/raphael/raphael.min.js"></script>
+<script src="bower_components/morris.js/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+</body>
+</html>

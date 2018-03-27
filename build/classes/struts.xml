@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<!-- 	<constant name="struts.action.excludePattern" value="/echarts/.*?" />
+		default locale
+	<constant name="struts.devMode" value="true" />
+	<package name="helloworld" extends="struts-default,json-default">
+
+		<action name="login" class="action.LoginAction" method="execute">
+			<result name="success">/pages/echarts_test.html</result>
+			<result name="error">/health_monitor.html</result>
+		</action>
+
+
+
+		<action name="BarAction" class="action.BarAction" method="query">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+	</package> -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="simpledemo" extends="struts-default,json-default">
+		<action name="*JsonAction" class="action.JsonAction" method="{1}">
+			<result type="json">
+				<param name="root">
+					result
+				</param>
+			</result>
+		</action>
+	</package>
+	
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="simple" extends="struts-default,json-default">
+		<action name="*HealthAction" class="action.HealthAction" method="{1}">
+			<result type="json">
+				<param name="root">
+					result
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<package name="s" extends="struts-default,json-default">
+		<action name="*JsonA" class="action.JsonA" method="{1}">
+			<result type="json">
+				<param name="root">
+					result
+				</param>
+			</result>
+		</action>
+	</package> 
+</struts>

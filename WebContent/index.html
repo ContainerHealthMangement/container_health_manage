@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>中铁集装箱健康管理系统</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <!-- 调用一些小图表标志和左右转换的小箭头 -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="AdminLTE-2.4.0-rc/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="css/span-font.css">
+  <link rel="stylesheet" href="css/div-font.css">
+  <script src="AdminLTE-2.4.0-rc/bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>中铁集</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>集装箱PHM</b>系统</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">        
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="AdminLTE-2.4.0-rc/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">管理员1</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="AdminLTE-2.4.0-rc/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  	管理员1 
+                  <small>欢迎使用系统</small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button 右上角小齿轮-->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+ <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="AdminLTE-2.4.0-rc/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>管理员1</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="treeview menu">
+          <a href="#">
+            <i class="fa fa-file-text"></i> <span>箱体信息查询</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="container_information.html"><i class="fa fa-search"></i> 箱体信息查询</a></li>
+            <li><a href="#"><i class="fa fa-train"></i> 箱体轨迹显示</a></li>
+          </ul>
+        </li>
+        
+        <li class="active treeview menu-open">
+          <a href="#">
+            <i class="fa fa-list"></i> <span>箱体健康管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="#"><i class="fa fa-map"></i> 箱体健康指数</a></li>
+            <li><a href="health_query_new.html"><i class="fa fa-line-chart"></i> 箱体健康状态趋势</a></li>
+            <li><a href="Health_predict_new.html"><i class="fa fa-line-chart"></i> 箱体健康预测</a></li>
+          </ul>
+        </li>
+        
+        <li class="treeview menu">
+          <a href="#">
+            <i class="fa fa-wrench"></i> <span>箱体维修决策</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-bar-chart"></i> 健康分级</a></li>
+            <li><a href="#"><i class="fa fa-gavel"></i> 检修部位</a></li>
+            <li><a href="#"><i class="fa fa-calendar"></i> 时间建议</a></li>
+          </ul>
+        </li>   
+      
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper" style="background-color:#404a59">
+
+    <!-- Main content -->
+    <section class="content">
+    <div class="row">
+    	<div class="col-md-4 col-sm-6 col-xs-12">
+    		<div>
+    		<div><span class="fontStyle1">监测集装箱总数</span></div>
+    		<div class="fontStyle">
+    			<font color="white" id="health5"></font> 
+    		</div> 	              	
+    		</div>
+    	</div>
+    	
+    	<div class="col-md-4 col-sm-6 col-xs-12">
+    		<div>
+    		<div><span class="fontStyle1">待修集装箱数目</span></div>
+    		<div class="fontStyle" style="width:100%; height:60px">
+    		<font color="white" id="health4"></font> 
+    		</div> 	              	
+    		</div>
+    	</div>
+    	
+    	<div class="col-md-4 col-sm-6 col-xs-12">
+    		<div>
+    		<div><span class="fontStyle1">集装箱健康等级I数目</span></div>
+    		<div class="fontStyle">
+    		<font color="white" id="health1"></font> 
+    		</div> 	              	
+    		</div>
+    	</div>
+    	
+    </div>
+    
+    <div class="row">
+    	<div class="col-md-4 col-sm-6 col-xs-12">
+    		<div>
+    		<div><span class="fontStyle1">集装箱健康等级II数目</span></div>
+    		<div class="fontStyle" style="width:100%; height:60px">
+    		<font color="white" id="health2"></font> 
+    		</div>              	
+    		</div>
+    	</div>
+    	
+    	<div class="col-md-4 col-sm-6 col-xs-12">
+    		<div>
+    		<div><span class="fontStyle1">集装箱健康等级III数目</span></div>
+    		<div class="fontStyle">
+    		<font color="white" id="health3"></font> 
+    		</div> 	              	
+    		</div>
+    	</div>
+    	
+    	<div class="col-md-4 col-sm-6 col-xs-12">
+    		<div>
+    		<div><span class="fontStyle1">集装箱健康等级IV数目</span></div>
+    		<div class="fontStyle" id="health4">
+    		<font color="white" id="health4"></font> 
+    		</div> 	              	
+    		</div>
+    	</div>
+    	
+    </div>
+    <script type="text/javascript">
+						function loadHealth(health_value) {
+							$.ajax({
+										type : "post",
+										async : false,
+										url : "historyhealth.do",
+										data : {},
+										dataType : "json",
+										success : function(result) {
+											if (result) {
+												for (var i = 0; i < result.length; i++) {	
+													if(result[i].health10>80 && result[i].health10<=100){
+												    health_value.push({
+												    	health: result[i].health10,
+												        container_number:result[i].xhdm,
+												        name:result[i].location												    		
+												    }); 
+													}	
+												}
+											}
+											return health_value;
+										}
+									})
+						}
+						</script>
+					
+	<script type="text/javascript">
+						function loadHealth_1(health_value) {
+							$.ajax({
+										type : "post",
+										async : false,
+										url : "historyhealth.do",
+										data : {},
+										dataType : "json",
+										success : function(result) {
+											if (result) {
+												for (var i = 0; i < result.length; i++) {	
+													if(result[i].health10<80){
+												    health_value.push({
+												    	health: result[i].health10,
+												        container_number:result[i].xhdm,
+												        name:result[i].location												    		
+												    }); 
+													}	
+												}
+											}
+											return health_value;
+										}
+									})
+						}
+						</script>
+						
+						
+						
+    <div class="row">
+     	<div class="col-md-7 col-sm-12 col-xs-12">
+    		<div id="status-monitor" style="width: 100%;height:500px;"></div>
+			<script src="AdminLTE-2.4.0-rc/echarts/echarts3.6.2.js"></script>
+			<script src="AdminLTE-2.4.0-rc/echarts/china.js"></script>
+			<script src="js/status-container.js"></script>
+    	</div>
+   
+   <script type="text/javascript">
+						function loadHealth_grade(health_value) {
+							$.ajax({
+										type : "post",
+										async : false,
+										url : "historyhealth.do",
+										data : {},
+										dataType : "json",
+										success : function(result) {
+											if (result) {
+												var health_number = 0;
+												var health1 = 0;
+												var health2 = 0;
+												var health3 = 0;
+												var health4 = 0;
+												for (var i = 0; i < result.length; i++) {
+													health_number = result[i].health10;
+													if(health_number>90)
+														{
+												          health1++;
+														}
+													else if(health_number > 80 && health_number <= 90){
+														health2++;
+													}
+													else if(health_number > 70 && health_number <= 80){
+														health3++;
+													}
+													else if(health_number <= 70){
+														health4++;
+													}
+												}
+												var health5 = health1 + health2 + health3 + health4
+											}
+											health_value[0] = health1;
+											health_value[1] = health2;
+											health_value[2] = health3;
+											health_value[3] = health4;
+											health_value[4] = health5;
+											console.log(health_value);
+											return health_value;
+										}
+									})
+						}
+						</script>
+					<script>
+						var health = [];
+						loadHealth_grade(health);
+						console.log("ccccc");
+						console.log(health);
+						
+						console.log(health[0]);
+						console.log("dd");
+						console.log("health2");
+						$(document).ready(function(){
+							$("font#health1").html(health[0]);
+							$("font#health2").html(health[1]);
+							$("font#health3").html(health[2]);
+							$("font#health4").html(health[3]);
+							$("font#health5").html(health[4]);
+						})
+						</script>
+   
+    	<div class="col-md-5 col-sm-12 col-xs-12">
+    		<div id="container-percentages" style="width: 100%;height:500px;"></div>
+		    <script src="js/status-container-pie.js"></script>
+    	</div>
+    	   	
+    </div>
+    
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+<!-- jQuery 3 -->
+
+<!-- Bootstrap 3.3.7 -->
+<script src="AdminLTE-2.4.0-rc/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="AdminLTE-2.4.0-rc/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="AdminLTE-2.4.0-rc/dist/js/adminlte.min.js"></script>
+<!-- Sparkline -->
+<script src="AdminLTE-2.4.0-rc/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap  -->
+<script src="AdminLTE-2.4.0-rc/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="AdminLTE-2.4.0-rc/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- SlimScroll -->
+<script src="AdminLTE-2.4.0-rc/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="AdminLTE-2.4.0-rc/dist/js/pages/dashboard2.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="AdminLTE-2.4.0-rc/dist/js/demo.js"></script>
+
+</body>
+</html>
